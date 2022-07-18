@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import Book from './Book.js'
 
 
 function App() {
@@ -89,15 +89,8 @@ function App() {
   return (
     <>
       <h1> Freeshelf Books </h1>
-      {bookData.map((book) => (
-        <div className="bookinfo">
-          <p>Title: {book.title} </p>
-          <p>Author: {book.author} </p>
-          <p> {book.shortDescription} </p>
-          <img src={book.coverImageUrl}></img>
-          <br></br>
-          <button>More info</button>
-        </div>
+      {bookData.map((book, index) => (
+        <Book book={book} key={index}/>
       ))}
     </>
   )
